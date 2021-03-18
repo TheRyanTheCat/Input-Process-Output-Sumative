@@ -1,0 +1,43 @@
+/**************************************************************************
+Program Name: Volume and Surface Area Calculator for Hollow Spheres
+Assignment Name: Input-Process-Output Summative
+Instructor: S. Gaffoor
+Course Code: ICS3U1-22
+
+Author: Ryan Tan
+Version: 1.0
+
+Program Description: Uses a GUI to ask the user about the diameter 
+of a sphere, then calculates the volume of air required to fill it,
+along with the material required to cover it. Uses another GUI to
+show results of the calculations.
+
+**************************************************************************/
+//Importing classes into the program
+import javax.swing.JOptionPane; //Importing class that allows for creation of GUIs
+import java.lang.Math; //Importing class that expands the usability of math in the program
+
+public class Main {
+
+  public static void main(String[] args) {
+
+	  
+	//Asking the user for the diameter of a sphere with a GUI
+	double sphereDiameter = Double.parseDouble(JOptionPane.showInputDialog("Hello! Enter the diameter of a sphere in centimeters and\nI can tell you how much air you need to fill it, along with\nhow much material you need to cover the sphere!")); //Asking the user for the diameter of the sphere
+	
+	
+	//Calculating the volume and surface area of a sphere using the inputed diameter to the nearest tenths
+	double sphereVolume = 1.0/6.0*Math.PI*(sphereDiameter*sphereDiameter*sphereDiameter); //Calculating the volume of the sphere using inputed diameter
+	double sphereVolumeRounded = Math.round(sphereVolume*10.0)/10.0; //Rounding the volume of the sphere to the nearest tenths
+	
+	double sphereSurfaceArea = Math.PI*(sphereDiameter*sphereDiameter); //Calculating the surface area of the sphere using inputed diameter
+	double sphereSurfaceAreaRounded = Math.round(sphereSurfaceArea*10.0)/10.0; //Rounding the volume of the sphere to the nearest tenths
+	
+	
+	//Displaying the volume and surface area of the sphere with a GUI
+	JOptionPane.showMessageDialog(null, "You would need "+sphereVolumeRounded+" cm cubed of air to fill the sphere"); //Displaying the air required to fill the sphere
+	JOptionPane.showMessageDialog(null, "You would need "+sphereSurfaceAreaRounded+" cm squared of material to cover the sphere"); //Displaying the material required to cover the sphere
+	
+  }
+
+}
