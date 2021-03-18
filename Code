@@ -39,5 +39,5 @@ public class Main {
 	JOptionPane.showMessageDialog(null, "You would need "+sphereSurfaceAreaRounded+" cm squared of material to cover the sphere"); //Displaying the material required to cover the sphere
 	
   }
-
+  
 }
